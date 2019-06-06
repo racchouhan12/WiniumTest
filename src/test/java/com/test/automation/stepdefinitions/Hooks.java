@@ -25,11 +25,11 @@ public class Hooks {
     WebDriver driver;
 
     @Before
-    public void setup(Scenario scenario) throws IOException, InterruptedException {
+    public void setup(Scenario scenario) throws IOException {
         logger.info("Running scenario : "+ scenario.getName());
         loadFromPropertiesFile();
         addDriverProperties();
-        Thread.sleep(2000);
+        thisRun.waitFor(2);
     }
 
     private void loadFromPropertiesFile() throws IOException {
